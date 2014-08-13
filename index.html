@@ -915,11 +915,8 @@
 <section>
   <h2><a>PushError</a> Interface</h2>
 
-  <p>The <a>PushError</a> interface represents an event related to a 
-		<a class="internalDFN" href="#dfn-push-registration">push registration</a> 
-		that is no longer valid and thus needs to be created again by the 
-		<a class="internalDFN" href="#dfn-webapp">webapp</a> by means of a new invocation 
-		of the <a><code>register</code></a> method.</p>
+  <p>The <a>PushError</a> interface represents an error ocurred at the Push
+  Service.</p>
 		
   <dl title="interface PushError"
       class="idl">
@@ -928,7 +925,12 @@
     href="#dfn-push-registration">push registration</a> to which this event is 
 		related.</dd>
     <dt>readonly attribute DOMString reason</dt>
-    <dd>MUST return the type of error that is being reported.</dd>
+    <dd>MUST return the type of error that is being reported. For instance that
+    a <a class="internalDFN" href="#dfn-push-registration">push registration</a>
+                 is no longer valid and thus needs to be created again by the
+                <a class="internalDFN" href="#dfn-webapp">webapp</a> by means of
+                a new invocation of the <a><code>register</code></a> method, or
+                an out-of-sync error</dd>
 
   </dl>
 </section>
