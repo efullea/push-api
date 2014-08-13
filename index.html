@@ -911,26 +911,24 @@
 </section>
 
 
-<!************************ Interface PushRegisterMessage *********************>
+<!************************ Interface PushError ****************************>
 <section>
-  <h2><a>PushRegisterMessage</a> Interface</h2>
+  <h2><a>PushError</a> Interface</h2>
 
-	<p class="note">TAG issue: 
-	PushRegisterMessage name is confusing as it really occurs when push service failed, 
-	not when new registration granted. Suggestion: PushServiceFailure.</p>	
-  
-  <p>The <a>PushRegisterMessage</a> interface represents an event related to a 
+  <p>The <a>PushError</a> interface represents an event related to a 
 		<a class="internalDFN" href="#dfn-push-registration">push registration</a> 
 		that is no longer valid and thus needs to be created again by the 
 		<a class="internalDFN" href="#dfn-webapp">webapp</a> by means of a new invocation 
 		of the <a><code>register</code></a> method.</p>
 		
-  <dl title="interface PushRegisterMessage"
+  <dl title="interface PushError"
       class="idl">
     <dt>readonly attribute DOMString pushRegistrationId</dt>
     <dd>MUST return the identifier of the <a class="internalDFN"
     href="#dfn-push-registration">push registration</a> to which this event is 
 		related.</dd>
+    <dt>readonly attribute DOMString reason</dt>
+    <dd>MUST return the type of error that is being reported.</dd>
 
   </dl>
 </section>
